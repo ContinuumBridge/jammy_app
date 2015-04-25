@@ -77,14 +77,10 @@ class App(CbApp):
     def name(self, message):
         return self.idToName[message["id"]]
 
-    def characteristic(self, message):
-        try:
-            return message["characteristic"], message["data"]
-
     def onAdaptorData(self, message):
         self.cbLog("debug", "onadaptorData, message: " + str(json.dumps(message, indent=4)))
         now = time.time()
-        if name{message) == "Round Button":
+        if self.name(message) == "Round Button":
             if now - self.previousTime > 3:
                 self.cbLog("debug", "onAdaptorData, button received")
                 self.previousTime = now
