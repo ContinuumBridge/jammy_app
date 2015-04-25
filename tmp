@@ -1,0 +1,20 @@
+2015-04-20 23:21:15,940 INFO Message received: {
+    "body": {
+        "m": "data", 
+        "d": [
+            {
+                "points": [
+                    [
+                        1429568386409, 
+                        10.375
+                    ]
+                ], 
+                "name": "BID8/Tag_Outside/temperature"
+            }
+        ], 
+        "n": 597
+    }, 
+    "source": "BID8/AID19",
+    "sessionID": "thkyo5xvoyrtffwl38uh9ik0qezth12o",
+    "destination": "CID71"
+}

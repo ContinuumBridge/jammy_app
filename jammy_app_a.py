@@ -74,18 +74,26 @@ class App(CbApp):
             self.cbLog("debug", "message received from client before app configured")
             self.cbLog("warning", "Exception: " + str(type(ex)) + str(ex.args))
 
+    def name(self, message):
+        return self.idToName[message["id"]]
+
+    def characteristic(self, message):
+        try:
+            return message["characteristic"], message["data"]
+
     def onAdaptorData(self, message):
         self.cbLog("debug", "onadaptorData, message: " + str(json.dumps(message, indent=4)))
         now = time.time()
-        if now - self.previousTime > 3:
-            self.cbLog("debug", "onAdaptorData, button received")
-            self.previousTime = now
-            msg = {"m": "button",
-                   "s": self.idToName[message["id"]],
-                   "t": time.time()
-                  }
-            self.client.send(msg)
-
+        if name{message) == "Round Button":
+            if now - self.previousTime > 3:
+                self.cbLog("debug", "onAdaptorData, button received")
+                self.previousTime = now
+                msg = {"m": "button",
+                       "s": self.name(message),
+                       "t": time.time()
+                      }
+                self.client.send(msg)
+    
     def onAdaptorService(self, message):
         buttons = False
         button = False
